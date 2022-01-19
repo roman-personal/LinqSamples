@@ -5,6 +5,7 @@ namespace LinqSamples {
         static void Main(string[] args) {
             MixedSyntax.Run();
             LazyEvaluation.Run();
+            GeometricSequence.Run();
             Palindrome.Run();
         }
     }
