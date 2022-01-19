@@ -1,0 +1,43 @@
+﻿using System;
+using System.Diagnostics;
+using System.Linq;
+
+namespace LinqSamples {
+    internal class Parallel {
+        public static void Run() {
+            Console.WriteLine("Последовательный vs параллельный");
+            var sw = new Stopwatch();
+            Console.WriteLine("Generating...");
+            sw.Start();
+            var data = GenerateData(500000000); // 500M values ~ 2GB
+            sw.Stop();
+            Console.WriteLine($"Done! Elapsed: {sw.Elapsed}");
+            Console.WriteLine("GetMaxSequential...");
+            sw.Restart();
+            float maxval = GetMaxSequential(data);
+            sw.Stop();
+            Console.WriteLine($"Done! Max: {maxval}, Elapsed: {sw.Elapsed}");
+            Console.WriteLine("GetMaxParallel...");
+            sw.Restart();
+            maxval = GetMaxParallel(data);
+            sw.Stop();
+            Console.WriteLine($"Done! Max: {maxval}, Elapsed: {sw.Elapsed}");
+        }
+
+        static float GetMaxSequential(float[] data) =>
+            data.Max();
+
+        static float GetMaxParallel(float[] data) =>
+            data.AsParallel()
+                .WithDegreeOfParallelism(4)
+                .Max();
+
+        static float[] GenerateData(int count) {
+            var random = new Random();
+            var result = new float[count];
+            for (int i = 0; i < count; i++)
+                result[i] = (float)(random.NextDouble() * 1000);
+            return result;
+        }
+    }
+}

@@ -6,6 +6,7 @@ namespace LinqSamples {
             MixedSyntax.Run();
             LazyEvaluation.Run();
             GeometricSequence.Run();
+            Parallel.Run();
             Palindrome.Run();
         }
     }
