@@ -7,7 +7,10 @@ namespace LinqSamples {
             Console.WriteLine("ЭТО ПАЛИНДРОМ???");
             string text = "А роза упала на лапу Азора";
             Console.WriteLine(text);
-            Console.WriteLine(Palindrome.IsPalindrom(text));
+            Console.WriteLine(Palindrome.IsPalindrome(text));
+            text = "The quick brown fox jumps over the lazy dog";
+            Console.WriteLine(text);
+            Console.WriteLine(Palindrome.IsPalindrome(text));
         }
     }
 }

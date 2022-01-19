@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace LinqSamples {
     internal class Palindrome {
-        public static bool IsPalindrom(string text) {
+        public static bool IsPalindrome(string text) {
             if (string.IsNullOrEmpty(text))
                 return true;
             var cleared = text
