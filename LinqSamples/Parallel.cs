@@ -7,16 +7,19 @@ namespace LinqSamples {
         public static void Run() {
             Console.WriteLine("Последовательный vs параллельный");
             var sw = new Stopwatch();
+            // Генерируем кучу данных
             Console.WriteLine("Generating...");
             sw.Start();
             var data = GenerateData(500000000); // 500M values ~ 2GB
             sw.Stop();
             Console.WriteLine($"Done! Elapsed: {sw.Elapsed}");
+            // Ищем максимум последовательным LINQ
             Console.WriteLine("GetMaxSequential...");
             sw.Restart();
             float maxval = GetMaxSequential(data);
             sw.Stop();
             Console.WriteLine($"Done! Max: {maxval}, Elapsed: {sw.Elapsed}");
+            // Ищем максимум параллельным LINQ
             Console.WriteLine("GetMaxParallel...");
             sw.Restart();
             maxval = GetMaxParallel(data);
