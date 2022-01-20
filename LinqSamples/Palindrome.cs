@@ -4,8 +4,8 @@ using System.Linq;
 namespace LinqSamples {
     internal class Palindrome {
         public static void Run() {
-            Console.WriteLine("ЭТО ПАЛИНДРОМ???");
-            string text = "А роза упала на лапу Азора";
+            Console.WriteLine("Is it palindrome???");
+            string text = "Live on time, emit no evil";
             Console.WriteLine(text);
             Console.WriteLine(IsPalindrome(text));
             Console.WriteLine(IsPalindrome2(text));

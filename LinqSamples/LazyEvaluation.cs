@@ -5,7 +5,7 @@ using System.Linq;
 namespace LinqSamples {
     internal class LazyEvaluation {
         public static void Run() {
-            Console.WriteLine("Отложенное вычисление");
+            Console.WriteLine("Lazy evaluation");
             var list = new List<int>() { 1, 2, 3, 4 };
             var query = list.Where(x => x % 2 != 0);
             var oddValues = query.ToList();

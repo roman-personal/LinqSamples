@@ -5,7 +5,7 @@ using System.Linq;
 namespace LinqSamples {
     internal class GeometricSequence {
         public static void Run() {
-            Console.WriteLine("Генератор последовательности");
+            Console.WriteLine("Unfold/Sequence generation");
             var query = Sequence(1, 2).Take(16);
             Console.WriteLine(string.Join(", ", query));
         }

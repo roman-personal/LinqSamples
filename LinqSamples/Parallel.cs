@@ -5,7 +5,7 @@ using System.Linq;
 namespace LinqSamples {
     internal class Parallel {
         public static void Run() {
-            Console.WriteLine("Последовательный vs параллельный");
+            Console.WriteLine("Sequential vs parallel LINQ");
             var sw = new Stopwatch();
             // Генерируем кучу данных
             Console.WriteLine("Generating...");
