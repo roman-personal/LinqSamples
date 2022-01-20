@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
@@ -27,10 +28,10 @@ namespace LinqSamples {
             Console.WriteLine($"Done! Max: {maxval}, Elapsed: {sw.Elapsed}");
         }
 
-        static float GetMaxSequential(float[] data) =>
+        static float GetMaxSequential(IEnumerable<float> data) =>
             data.Max();
 
-        static float GetMaxParallel(float[] data) =>
+        static float GetMaxParallel(IEnumerable<float> data) =>
             data.AsParallel()
                 //.WithDegreeOfParallelism(4) // try this!!!
                 .Max();
