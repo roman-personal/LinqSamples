@@ -33,7 +33,7 @@ namespace LinqSamples {
 
         static float GetMaxParallel(IEnumerable<float> data) =>
             data.AsParallel()
-                //.WithDegreeOfParallelism(4) // try this!!!
+                .WithDegreeOfParallelism(4) // try comment this...
                 .Max();
 
         static float[] GenerateData(int count) {
